@@ -1,0 +1,21 @@
+[tools]
+# Common Cli Tools
+sd = "latest"
+ripgrep = "latest"
+fzf = "latest"
+zoxide = "latest"
+starship = "latest"
+
+# Common Tools
+helix = "latest"
+neovim = "latest"
+lazygit = "latest"
+yazi = "latest"
+zellij = "latest"
+opencode = "latest"
+
+# Runtimes
+node = "lts"
+
+# LSP
+marksman = "latest"
