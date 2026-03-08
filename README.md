@@ -6,7 +6,7 @@
 
 Whether you write Rust, Go, Java, .NET, TypeScript, or all of the above, Kajko gives you a reproducible, blazing-fast workspace right out of the box.
 
----
+<!-- ---
 
 ## ✨ Features
 
@@ -19,45 +19,21 @@ Whether you write Rust, Go, Java, .NET, TypeScript, or all of the above, Kajko g
 ## 🚀 Getting Started
 
 ### Prerequisites
-- [Docker](https://www.docker.com/) / Docker Desktop
-- [Visual Studio Code](https://code.visualstudio.com/) with the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) (or any CLI devcontainer implementation like `devcontainer-cli`).
 
-### Usage
-
-1. **Clone the repository or add it to your project:**
-   Copy the `.devcontainer` folder into the root of your existing project.
-
-2. **Customize your tools (Optional):**
-   Edit the `.mise.toml` file to add, remove, or pin specific versions of your favorite tools and languages.
-
-3. **Reopen in Container:**
-   Open the command palette in VS Code (`Ctrl+Shift+P` / `Cmd+Shift+P`) and select **Dev Containers: Reopen in Container**.
-
-4. **Start Coding:**
-   Once built, type `nvim` in the terminal and enjoy your new forge!
-
-## 📁 Repository Structure
-
-```text
-kajko/
-├── .devcontainer/
-│   ├── devcontainer.json   # Main devcontainer configuration
-│   └── Dockerfile          # Base OS and core system dependencies
-├── .config/
-│   └── nvim/               # Pre-baked Neovim configuration
-├── .mise.toml              # Toolchain definition (Bun, Deno, Rust, Go, etc.)
-└── README.md
-
+- [Docker](https://www.docker.com/) / Podman
+ -->
  
 ---
 
-# Doc
-
 ## Build
-podman build -t fedora-dev .
+
+podman build -t kajko .
 
 ## Run (Interactive with TTY)
-podman run -it --rm -v $(pwd):/home/dev/workspace fedora-dev
+
+podman run -it --hostname my-kajko -u kajko -v ${pwd}:/home/kajko/workspace kajko
+<!-- podman run -it --hostname my-kajko kajko -->
+<!-- podman run -it -v $(pwd):/home/dev/workspace kajko -->
 
 ## IDEAS Todo
 
