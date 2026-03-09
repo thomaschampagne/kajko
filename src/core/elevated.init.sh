@@ -19,20 +19,43 @@ echo "Apply updates"
 dnf upgrade -y
 
 ### Apply core installs ###
-    # ripgrep file fzf fd zoxide \ # TODO Load file fzf fd zoxide from mise ?
-echo "Install base core packages"
+echo "Install base packages"
 dnf install -y --setopt=install_weak_deps=False \
-    hostname coreutils util-linux sudo shadow-utils gettext dos2unix \
-    less tree which findutils \
-    procps-ng psmisc \
-    bind-utils iproute iputils traceroute nmap netcat \
+    sudo \
+    hostname \
+    coreutils \
+    libicu \
+    util-linux \
+    shadow-utils \
+    gettext \
+    dos2unix \
+    less \
+    tree \
+    which \
+    findutils \
+    zsh \
+    procps-ng \
+    psmisc \
+    bind-utils \
+    iproute \
+    iputils \
+    traceroute \
+    nmap \
+    netcat \
+    tcpdump \
     file \
-    nano vim \
-    unzip 7zip \
+    nano \
+    vim \
+    unzip \
+    7zip \
     git-core \
-    openssl curl wget \
-    jq yq \
-    btop htop \
+    openssl \
+    curl \
+    wget \
+    jq \
+    yq \
+    btop \
+    htop \
     mise
 
 echo "Removing unnecessary packages..."

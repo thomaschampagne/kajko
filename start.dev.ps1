@@ -24,4 +24,4 @@ podman run -dit `
     kajko:dev
 
 # Attach to the container
-podman exec -it kajko bash
+podman exec -it kajko bash # TODO or zsh 

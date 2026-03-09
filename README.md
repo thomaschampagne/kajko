@@ -36,9 +36,9 @@ podman run -it --hostname my-kajko -u kajko -v ${pwd}:/home/kajko/workspace kajk
 <!-- podman run -it --hostname my-kajko kajko -->
 <!-- podman run -it -v $(pwd):/home/dev/workspace kajko -->
 
-## IDEAS Todo
+## Todo
 
-- Jetbrain Mono
+- Jetbrain Mono to install or is relies on terminal I use ?
 
 - programs:
   - neovim
@@ -48,9 +48,6 @@ podman run -it --hostname my-kajko -u kajko -v ${pwd}:/home/kajko/workspace kajk
   - lazygit
   - zellij
   - jq + yq
-  - check minikit
-  - list here : https://yazi-rs.github.io/docs/installation/#copr
-  - ripgrep
   
 - set an hostname
 - drop dev user password for sudos ok
@@ -64,12 +61,23 @@ podman run -it --hostname my-kajko -u kajko -v ${pwd}:/home/kajko/workspace kajk
 
 - helix
   - map custom configs
-  - languages
+  - languages servers
     - ..
     - ...
+
+- shell: zsh by default? (build args + .(bashrc|zshrc) config)
+- shell enhancer? starship ??
 
 - git config:
   - dont break git ending
 
 - doc:
   - run on networks host for ports
+
+
+- Test to mounts a volume on /home/$user (goal: persist user data)
+
+
+- GitHub CI
+- find a new name
+- Make a README
