@@ -5,23 +5,27 @@ $ErrorActionPreference = "Stop"
 podman rm -f kajko
 
 # Build the container
-$Date = Get-Date -Format "yyyy-MM-dd"
+$Date = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 podman build `
-    --build-arg OCI_BUILD_DATE=$Date `
-    -t kajko:dev .
+  --build-arg OCI_BUILD_DATE=$Date `
+  --build-arg-file argfile.conf `
+  -t kajko:dev .
 
 # Run the container
-podman run -dit `
-    --name kajko `
-    --hostname kajko `
-    --user dev `
-    --env GIT_NAME="Thomas Champagne" `
-    --env GIT_EMAIL="thomas.champagne@fakemail.com" `
-    --workdir /workspace `
-    --volume "${pwd}:/workspace" `
-    --network=host `
-    --cap-add=NET_RAW `
-    kajko:dev
+podman run -it `
+  --name kajko `
+  --hostname kajko `
+  --user dev `
+  --env GIT_NAME="Thomas Champagne" `
+  --env GIT_EMAIL="thomas.champagne@fakemail.com" `
+  --workdir /workspace `
+  --volume "${pwd}:/workspace" `
+  --network=host `
+  --cap-add=NET_RAW `
+  kajko:dev `
+  bash
+
+# TODO Test delegated volume fro /home/dev
 
 # Attach to the container
-podman exec -it kajko bash # TODO or zsh 
+# podman exec -it kajko:dev bash # TODO or zsh 
