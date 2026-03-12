@@ -34,4 +34,3 @@ alias la='ls -lAFh'
 
 # Default PATH
 eval "$(mise activate --shims)" # Will export mise shim to PATH
-

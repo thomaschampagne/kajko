@@ -92,9 +92,9 @@ COPY ./setup/tools/base/user.config.sh ./tools/base/user.config.sh
 RUN dos2unix ./tools/base/user.config.sh && runuser -u ${SYSTEM_USERNAME} -- zsh ./tools/base/user.config.sh
 
 # Copy base resources default files
-COPY ./setup/tools/base/resources/.config/ /home/${SYSTEM_USERNAME}/
+COPY ./setup/tools/base/resources/.config/ /home/${SYSTEM_USERNAME}/.config/
 RUN dos2unix /home/${SYSTEM_USERNAME}/.config/* && \
-  chown ${SYSTEM_USERNAME}:${SYSTEM_USERNAME} /home/${SYSTEM_USERNAME}/.config/
+  chown ${SYSTEM_USERNAME}:${SYSTEM_USERNAME} -R /home/${SYSTEM_USERNAME}/.config/
 
 ###### Setup DEV TOOLS USER & config #######
 # TODO Copy all *.sh sort them by filename and run in order ? @see https://github.com/thomaschampagne/oci-images/blob/main/cloud-domain/entrypoint.sh#L144

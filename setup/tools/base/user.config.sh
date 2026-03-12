@@ -9,21 +9,18 @@ echo "============================================================"
 
 #### .zshrc setup ####
 
-# - Append Mise shims activation...
-# echo 'eval "$(mise activate --shims)"' >> ~/.zshrc
-
 # - Append starship
 echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 
 # - Append zoxide
-echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc
+echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc\
+
+# - Append bun binaries
+echo 'export PATH="$PATH:~/.bun/bin"' >> ~/.zshrc
 
 # - Git default username & email
 echo 'git config --global user.name "${GIT_NAME}"' >> ~/.zshrc
 echo 'git config --global user.email "${GIT_EMAIL}"' >> ~/.zshrc
-
-# - Append bun binaries
-echo 'export PATH="$PATH:~/.bun/bin"' >> ~/.zshrc
 
 # - Load zshrc for next steps
 source ~/.zshrc

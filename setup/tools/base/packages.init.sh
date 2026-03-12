@@ -24,13 +24,15 @@ mise use -g \
   node@lts \
   rust \
   go \
-  python uv
+  python uv \
   # java@openjdk-25  # TODO Too much space required ?
 
 # - Npm 
 # -- Tools required for development (npm)
 npm install -g npm@latest
-npm add -g prettier
+npm add -g \
+  typescript \
+  prettier
 
 ### Lsp Installs ### (for editors like helix https://github.com/helix-editor/helix/wiki/Language-Server-Configurations)
 # - Mise
