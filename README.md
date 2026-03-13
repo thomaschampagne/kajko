@@ -45,6 +45,7 @@ podman run -it --hostname my-kajko -u kajko -v ${pwd}:/home/kajko/workspace kajk
 - [ ] Decide on remote access strategy (SSH server for VS Code or `code-server`)
 - [ ] Create a `docker-compose.yml` as a sample
 - [ ] Add ssh server access
+- [ ] Add entrypoint script that run zellij by default
 
 ## CLI and Shell
 - [ ] Configure `starship` environment to choose a template preset
@@ -54,7 +55,8 @@ podman run -it --hostname my-kajko -u kajko -v ${pwd}:/home/kajko/workspace kajk
 ## Helix Editor
 - [ ] Map custom Helix configurations
 - [ ] Set up language servers for base runtimes
-- [ ] Integrate `yazi` file manager with Helix
+- [ ] Integrate `yazi` file manager with Helix]
+- [ ] Map lazygit editor to helix
 
 ## Project and CI/CD
 - [ ] Rename project to "enklum" (reference to "enclume" in French)

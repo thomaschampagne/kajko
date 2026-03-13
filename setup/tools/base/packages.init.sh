@@ -16,13 +16,13 @@ source ~/.zshrc
 mise use -g sd ripgrep fzf zoxide starship
 
 # -- Base dev tools (Mise)
-mise use -g helix neovim lazygit yazi zellij opencode
+mise use -g helix neovim lazygit yazi zellij opencode # TODO Fix zellij config not applied 
 
 # -- Runtimes (Mise)
 mise use -g \
   bun \
   node@lts \
-  rust \
+  rust --profile minimal \
   go \
   python uv \
   # java@openjdk-25  # TODO Too much space required ?

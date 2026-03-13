@@ -26,7 +26,7 @@ select = "underline"       # Underline cursor when in selection mode
 
 [editor.whitespace.render]
 space = "all"              # White-spaces dots
-newline = "all"
+# newline = "all"
 
 [editor.file-picker]
 hidden = false              # Show dot files/folders in file picker 

@@ -5,7 +5,7 @@ ARG OCI_TITLE=oci-vault-image
 ARG OCI_REPO_URL=https://github.com/thomaschampagne/kajko
 ARG OCI_DESCRIPTION="...TODO...." # TODO ...
 ARG OCI_MAINTAINER="Thomas Champagne"
-ARG SYSTEM_USERNAME="dev"
+ARG SYSTEM_USERNAME="crafter"
 ARG DEFAULT_WORKSPACE_DIR="/workspace"
 
 FROM ${OCI_BASE_IMAGE}
@@ -39,7 +39,7 @@ ENV GIT_NAME="Your Name"
 ENV GIT_EMAIL="your@email.com"
 ENV TZ="Europe/Paris"
 
-# System enforced envs
+# TODO put it in system init as export instead | System enforced envs
 ENV TERM="xterm-256color"
 ENV COLORTERM="truecolor"
 
