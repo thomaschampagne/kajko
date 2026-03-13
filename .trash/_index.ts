@@ -4,8 +4,8 @@ interface Person {
   greet(): string;
 }
 
-// class Developer implements Person {
-  // constructor(
+class Developer implements Person {
+  constructor(
     public name: string,
     public age: number,
   ) {}

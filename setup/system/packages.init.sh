@@ -7,9 +7,6 @@ echo "============================================================"
 echo "exec \"$(basename "$0")\" script as script as \"$(whoami)\" user"
 echo "============================================================"
 
-### Add external repos ###
-dnf copr enable jdxcode/mise -y # Mise
-
 ### Apply core installs ###
 echo "Install base packages"
 dnf install -y --setopt=install_weak_deps=False \
@@ -42,6 +39,9 @@ dnf install -y --setopt=install_weak_deps=False \
   zsh-syntax-highlighting \
   nano \
   vim \
+  emacs \
+  tar \
+  gzip \
   unzip \
   7zip \
   git-core \
@@ -52,11 +52,13 @@ dnf install -y --setopt=install_weak_deps=False \
   yq \
   btop \
   htop \
-  ncdu \
-  mise
+  ncdu
 
 echo "Removing unnecessary packages..."
 dnf autoremove -y
 
 echo "Cleaning up..."
 dnf clean all -y
+
+# Install mise globally
+curl https://mise.run | MISE_INSTALL_PATH=/usr/local/bin/mise sh

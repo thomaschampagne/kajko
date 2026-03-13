@@ -4,16 +4,16 @@ set -e
 set -o pipefail
 
 ### Assert Envs Properly set ###
-: "${SYSTEM_USERNAME:?Environment variable SYSTEM_USERNAME is not set}"
-: "${DEFAULT_WORKSPACE_DIR:?Environment variable DEFAULT_WORKSPACE_DIR is not set}"
+: "${ENKLUM_USERNAME:?Environment variable ENKLUM_USERNAME is not set}"
+: "${ENKLUM_WORKSPACE_DIR:?Environment variable ENKLUM_WORKSPACE_DIR is not set}"
 
 # Create the main user
-useradd -m -d /home/${SYSTEM_USERNAME} -s /bin/zsh -G wheel ${SYSTEM_USERNAME}
+useradd -m -d /home/${ENKLUM_USERNAME} -s /bin/zsh -G wheel ${ENKLUM_USERNAME}
 
 # Add workspace dir
-mkdir -p ${DEFAULT_WORKSPACE_DIR}
-chown -R ${SYSTEM_USERNAME}:${SYSTEM_USERNAME} ${DEFAULT_WORKSPACE_DIR}
+mkdir -p ${ENKLUM_WORKSPACE_DIR}
+chown -R ${ENKLUM_USERNAME}:${ENKLUM_USERNAME} ${ENKLUM_WORKSPACE_DIR}
 
 # Allow to execute sudo without a password
-echo "${SYSTEM_USERNAME} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/${SYSTEM_USERNAME}
-chmod 0440 /etc/sudoers.d/${SYSTEM_USERNAME}
+echo "${ENKLUM_USERNAME} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/${ENKLUM_USERNAME}
+chmod 0440 /etc/sudoers.d/${ENKLUM_USERNAME}

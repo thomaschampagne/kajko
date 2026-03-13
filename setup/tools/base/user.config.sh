@@ -13,21 +13,18 @@ echo "============================================================"
 echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 
 # - Append zoxide
-echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc\
-
-# - Append bun binaries
-echo 'export PATH="$PATH:~/.bun/bin"' >> ~/.zshrc
+echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc
 
 # - Git default username & email
-echo 'git config --global user.name "${GIT_NAME}"' >> ~/.zshrc
-echo 'git config --global user.email "${GIT_EMAIL}"' >> ~/.zshrc
+echo 'git config --global user.name "${ENKLUM_GIT_USER_NAME}"' >> ~/.zshrc
+echo 'git config --global user.email "${ENKLUM_GIT_USER_EMAIL}"' >> ~/.zshrc
 
-# - Load zshrc for next steps
+# - reload zshrc for next steps
 source ~/.zshrc
 
 #### Tools config ####
 # Configure zoxide
-zoxide add /${DEFAULT_WORKSPACE_DIR}
+zoxide add /${ENKLUM_WORKSPACE_DIR}
 zoxide add ~/.config
 
 # Configure starship theme w/ "gruvbox"
