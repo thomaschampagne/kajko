@@ -31,6 +31,12 @@ space = "all"              # White-spaces dots
 [editor.file-picker]
 hidden = false              # Show dot files/folders in file picker 
 
+[editor.statusline]
+right = ["diagnostics", "selections", "register", "position-percentage", "position", "file-encoding", "file-line-ending", "file-type"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
 [keys.normal]
 # Opens lazygit in a new temporary buffer and redraws Helix after closing
 "C-g" = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]

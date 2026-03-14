@@ -202,30 +202,25 @@ MIT License — see [LICENSE](LICENSE) file.
 <!--
 # Backlog
 ## Docker and System
-- [ ] Reduce Docker image size: follow [Perplexity guide](https://www.perplexity.ai/search/how-to-reduce-size-of-docker-i-TsULWmUnSVOjoZePAW6jtw)
-- [ ] Set a custom hostname for the environment
-- [ ] Test mounting a volume to `/home/$user` to persist user data
-- [ ] Decide on remote access strategy (SSH server for VS Code or `code-server`)
+- [ ] Test mounting a volume to `/home/$user` to persist user data @P2
 - [ ] Create a `docker-compose.yml` as a sample
-- [ ] Add ssh server access
+- [ ] Add ssh server access @P2
 
 ## CLI and Shell
-- [ ] Configure `starship` environment to choose a template preset
-- [ ] Add Emacs via `dnf`
-- [ ] Add a disk usage analyzer like `ncdu` or `dust`
+- [ ] Configure `starship` environment to choose a template preset @P2
+- [ ] Add git-crypt ?
 
 ## Helix Editor
 - [x] Map custom Helix configurations
 - [ ] Set up language servers for base runtimes
-- [ ] Integrate `yazi` file manager with Helix]
+- [ ] Integrate `yazi` file manager with Helix => Open Yazi when opening helix file explorer
 - [x] Map lazygit editor to helix
 
 ## Project and CI/CD
-- [ ] Rename project to "enklum" (reference to "enclume" in French)
-- [ ] Set up GitHub CI workflows
-- [ ] Write a comprehensive README
-- [ ] rename zsh script extension as .zsh
-- [ ] Move resources folder at project root /
+- [ ] Set up GitHub CI workflows @P1
+- [ ] Write a comprehensive README @P1
+- [ ] rename zsh script extension as .zsh @P2
+- [ ] Move resources folder at project root / @P1
 
 ### Notes
 - **JetBrains Mono**: You do not need to install this inside the container. As long as your host terminal or local VS Code uses the font, the container will display it correctly.
