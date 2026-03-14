@@ -20,11 +20,6 @@ From the French word **"enclume"** for **anvil** is a ready-to-use containerized
 
 ENKLUM uses [Nerd Fonts](https://www.nerdfonts.com/) for icons and glyphs in the prompt and UI. Install a Nerd Font and configure your terminal to use it.
 
-```bash
-# Example: Install JetBrains Mono Nerd Font on Fedora
-dnf install jetbrains-mono-fonts
-```
-
 ## 🚀 Quick Start
 
 ### Run the Container
