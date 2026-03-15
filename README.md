@@ -202,6 +202,7 @@ MIT License — see [LICENSE](LICENSE) file.
 - [ ] Fix wrong time in container
 - [ ] rename zsh script extension as .zsh @P2
 - [ ] Move resources folder at project root / @P1
+- [ ] Once stable recreate bare empty enklum github project
 
 ### Notes
 - **JetBrains Mono**: You do not need to install this inside the container. As long as your host terminal or local VS Code uses the font, the container will display it correctly.
