@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       arg_file:
-        description: 'Path to arg file (default: ./argfile.default.conf)'
+        description: "Path to arg file (default: ./argfile.default.conf)"
         required: false
-        default: './argfile.default.conf'
+        default: "./argfile.default.conf"
   push:
     branches:
       - main
@@ -17,6 +17,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
