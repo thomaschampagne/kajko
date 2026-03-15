@@ -29,7 +29,7 @@ space = "all"              # White-spaces dots
 # newline = "all"
 
 [editor.file-picker]
-hidden = false              # Show dot files/folders in file picker 
+hidden = false              # Show dot files/folders in file picker
 
 [editor.statusline]
 right = ["diagnostics", "selections", "register", "position-percentage", "position", "file-encoding", "file-line-ending", "file-type"]
@@ -39,7 +39,7 @@ mode.select = "SELECT"
 
 [keys.normal]
 # Opens lazygit in a new temporary buffer and redraws Helix after closing
-"C-g" = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+"C-l" = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
 # Rebinds semicolon to enter command mode (standard Vim-like convenience)
 ";" = "command_mode"
 # Comment current line and move down

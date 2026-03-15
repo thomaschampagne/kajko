@@ -1,12 +1,15 @@
+# Overridden from argfile.default.conf through CI & image.build.sh
 ARG ENKLUM_FEDORA_BASE_VERSION=latest
-ARG OCI_BASE_IMAGE=registry.fedoraproject.org/fedora-minimal:${ENKLUM_FEDORA_BASE_VERSION}
-ARG OCI_BASE_IMAGE_URL=https://hub.docker.com/_/fedora
-ARG OCI_TITLE=oci-vault-image
-ARG OCI_REPO_URL=https://github.com/thomaschampagne/enklum
-ARG OCI_DESCRIPTION="Portable terminal-driven development forge"
-ARG OCI_MAINTAINER="Thomas Champagne"
 ARG ENKLUM_USERNAME="smith"
 ARG ENKLUM_WORKSPACE_DIR="/workspace"
+
+# OCI Args
+ARG OCI_BASE_IMAGE=registry.fedoraproject.org/fedora-minimal:${ENKLUM_FEDORA_BASE_VERSION}
+ARG OCI_BASE_IMAGE_URL=https://hub.docker.com/_/fedora
+ARG OCI_TITLE=oci-enklum-image
+ARG OCI_REPO_URL=https://github.com/thomaschampagne/enklum
+ARG OCI_DESCRIPTION="A portable Fedora terminal-driven development forge"
+ARG OCI_MAINTAINER="Thomas Champagne"
 
 FROM ${OCI_BASE_IMAGE}
 
@@ -19,7 +22,6 @@ ARG OCI_REPO_URL
 ARG OCI_BUILD_DATE
 ARG ENKLUM_USERNAME
 ARG ENKLUM_WORKSPACE_DIR
-# ARG DEFAULT_EDITOR="hx"
 
 # Envs From Args build
 ENV \
@@ -64,12 +66,13 @@ RUN \
 
 # ---- Base Tools Init ----
 COPY ./setup/tools ./tools
-COPY ./setup/resources/home /home/${ENKLUM_USERNAME}
+COPY ./resources/home ./resources/home
 RUN \
   # Ensure linux format of setup stuff
-  find ./tools -type f -exec dos2unix {} \; && dos2unix /home/${ENKLUM_USERNAME}/.zshrc && \
-  # Ensure proper rights
-  chown ${ENKLUM_USERNAME}:${ENKLUM_USERNAME} -R /home/${ENKLUM_USERNAME} && chmod 644 /home/${ENKLUM_USERNAME}/.zshrc && \
+  find ./tools ./resources/home -type f -exec dos2unix {} \; && \
+  # Ensure proper rights on home resources & copy to real home folder
+  chown ${ENKLUM_USERNAME}:${ENKLUM_USERNAME} -R ./resources/home && chmod 755 -R ./resources/home && \
+  cp -ar ./resources/home/. /home/${ENKLUM_USERNAME} && \
   # Init tools installations & configuration as user
   runuser -u ${ENKLUM_USERNAME} -- zsh -ic "./tools/base/packages.init.sh" && \
   runuser -u ${ENKLUM_USERNAME} -- zsh -ic "./tools/base/user.config.sh" && \

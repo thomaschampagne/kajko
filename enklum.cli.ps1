@@ -4,8 +4,8 @@ param(
     [string]$image_tag = "latest"
 )
 
-# TODO Add container runtime docker|podman choice (default podman)
-# TODO Add --stop --start --restart params
+# TODO Add container runtime docker|podman params to force run with --runner=(podman|docker). If no params given use podman by default then fallback on docker. If podman choosen & available prompt user to start default podman machine if not
+# TODO Add --stop --start --reset --kill params that act on the container state
 # TODO Add parameters --zsh (cmd: zsh) & --zellij (cmd: zsh -ic "zellij"). Default is --zellij and execute cmd in container accordingly
 # TODO Add --local-workspace=$(pwd) param
 # TODO Add an helper to user
@@ -28,8 +28,8 @@ if ($containerRunning) {
         "$image_name`:$image_tag"
 }
 
-Write-Host "Connecting to $image_name."
-podman exec -it $image_name zsh -ic "zellij"
+Write-Host "Connecting to $container_name."
+podman exec -it $container_name zsh -ic "zellij"
 # Or: podman exec -it enklum zsh
 
 # TODO Create same script above for bash once ps1 script is finished
